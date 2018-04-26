@@ -34,5 +34,5 @@
  
  Description : 
  		This is Project of Numerology, an Astrology Project which Predict your behaviour. In this Your behavior matches upto 70% to 80%.
- 		Initializing it as making Database Name "numerology" and import the numerology.sql file into your database.
+ 		Initializing it as making Database Name "numerology" and import the numerology.sql file present in Database Folder into your database.
  		Then Open up the Project and Put Your First name , Last name and Date of Birth it will show up the Result of Your matching Behaviour.
