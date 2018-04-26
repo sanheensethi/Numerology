@@ -22,7 +22,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
 
- * @package Error Handler Style
+ * @package Numerology
  * @author	Sanheen Sethi
  * @copyright	Copyright (c) 2018, Sanheen Sethi
  * @license	http://opensource.org/licenses/MIT	MIT License
