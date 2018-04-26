@@ -1,0 +1,23 @@
+{
+  "name": "numerology",
+  "version": "0.8.1",
+  "description": "Numerology Programme to do SomeCalculations on Date Of Birth , Name and Have some Results about you",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanheensethi/Numerology.git"
+  },
+  "keywords": [
+    "Numerology",
+    "Astrology"
+  ],
+  "author": "Sanheen Sethi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sanheensethi/Numerology/issues"
+  },
+  "homepage": "https://github.com/sanheensethi/Numerology#readme"
+}

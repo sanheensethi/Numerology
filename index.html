@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+<div class="jumbotron bg-danger">
+	<div class="text-center">
+		<h1 style="color:#fff"><em>Numerology</em></h1>
+	</div>
+</div>
+<hr>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon">Firstname</span>
+						<input type="text" class="form-control" id="firstname" placeholder="Firstname">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon">Lastname</span>
+						<input type="text" class="form-control" id="lastname" placeholder="Lastname">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon">Date Of Birth</span>
+						<input type="date" class="form-control" id="dob" placeholder="Date Of Birth">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-1">
+				<div class="form-group">
+					<input type="submit" class="btn btn-success" id="sub" Value="Results">
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="container">
+	<div id="show" class="text-justify"></div>
+</div>
+<script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#sub").on('click',function(){
+			var firstname = $("#firstname").val();
+			var lastname = $("#lastname").val();
+			var dob = $('#dob').val();
+			$.ajax({
+				url:"show.php",
+				type:"GET",
+				data:{'firstname':firstname,'lastname':lastname,'dob':dob},
+				success:function(data){
+					$('#show').html(data);
+				}
+			});
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="http://localhost:8080/main/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="jumbotron bg-danger">
+		<div class="text-center">
+			<h1 style="color:#fff">Create Table</h1>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<a href="insertdata.html" class="btn btn-default">Data Insert</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div id="lasttable"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<input type="text" id="tablename" placeholder="Table Name.."  class="form-control">
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Create" id="sub" class="btn btn-success">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<span class="input-group-addon">Tables : </span>
+					<div id="showtables"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div id="result"></div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="http://localhost:8080/main/js/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.ajax({
+			url:"showtables.php",
+			type:"GET",
+			success:function(data){
+				$('#showtables').html(data);
+			}
+			  });
+		setInterval(function(){
+			$.ajax({
+				url:"sessionable.php",
+				type:"GET",
+				success:function(data){
+					$('#lasttable').html(data);
+				}
+				});
+		},10);
+		$('#sub').on('click',function(){
+			tablename = $('#tablename').val();
+			$.ajax({
+				url:'create.php',
+				type:'POST',
+				data:{'tablename':tablename},
+				success:function(data){
+					$('#result').html(data);
+				}
+			});
+		});
+	});
+</script>
+</body>
+</html>
